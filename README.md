@@ -17,6 +17,8 @@ A Cheat Sheet 📜 to **revise** Python syntax in **less time**. Particularly us
   - [Sets](#sets)
   - [Tuples](#tuples)
   - [Strings](#strings)
+- [Collections & Iteration Tools](#collections--iteration-tools)
+  - [Itertools](#itertools)
 - [Built-in Functions](#built-in-functions)
 - [Advanced Topics](#advanced-topics)
 - [Best Practices](#best-practices)
@@ -199,7 +201,58 @@ chr(97)              # ASCII to char ('a')
 # Join Lists
 ''.join(['a','b'])   # Concatenate list elements
 ```
+## Collections & Iteration Tools
 
+### Itertools
+
+```python
+from itertools import (
+    combinations,
+    permutations,
+    product,
+    accumulate,
+    groupby,
+)
+```
+
+#### Combinations
+
+```python
+list(combinations([1, 2, 3], 2))
+# [(1, 2), (1, 3), (2, 3)]
+```
+
+#### Permutations
+
+```python
+list(permutations([1, 2, 3], 2))
+# [(1, 2), (1, 3), (2, 1), (2, 3), (3, 1), (3, 2)]
+```
+
+#### Product
+
+```python
+list(product([1, 2], repeat=2))
+# [(1, 1), (1, 2), (2, 1), (2, 2)]
+```
+
+#### Accumulate
+
+```python
+list(accumulate([1, 2, 3, 4]))
+# [1, 3, 6, 10]
+```
+
+#### Groupby
+
+```python
+for key, group in groupby("aaabbc"):
+    print(key, list(group))
+
+# a ['a', 'a', 'a']
+# b ['b', 'b']
+# c ['c']
+```
 # Built-in Functions
 
 ```python
